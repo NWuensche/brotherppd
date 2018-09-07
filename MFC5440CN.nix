@@ -1,7 +1,7 @@
 { pkgs, stdenv, fetchurl, cups, dpkg, ghostscript, patchelf, a2ps, coreutils, gnused, gawk, file, makeWrapper, tcsh }:
 
 stdenv.mkDerivation rec {
-  name = "mfcj47dd0dw-cupswrapper-${version}";
+  name = "mfc5400cn-${version}";
   version = "3.0.0-1";
 
   src = fetchurl {
@@ -41,7 +41,6 @@ stdenv.mkDerivation rec {
       --replace /usr/local/Brother/ "$out/usr/local/Brother/"
 
     mkdir -p $out
-    mkdir -p $out/weg
     mkdir -p $out/lib/cups/filter/
     mkdir -p $out/share/cups/model
     cp -r -v usr $out
@@ -62,10 +61,10 @@ stdenv.mkDerivation rec {
 
   meta = {
     homepage = http://www.brother.com/;
-    description = "Brother MFC-J470DW LPR driver";
+    description = "Brother MFC-5440CN driver";
     license = stdenv.lib.licenses.unfree;
     platforms = stdenv.lib.platforms.linux;
-    downloadPage = http://support.brother.com/g/b/downloadlist.aspx?c=us&lang=en&prod=mfcj470dw_us_eu_as&os=128;
-    maintainers = [ stdenv.lib.maintainers.yochai ];
+    downloadPage = http://support.brother.com/g/b/downloadtop.aspx?c=de&lang=de&prod=mfc5440cn_all;
+    maintainers = [ stdenv.lib.maintainers.nwuensche ];
   };
 }
